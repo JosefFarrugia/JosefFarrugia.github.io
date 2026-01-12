@@ -63,6 +63,13 @@ body {
   justify-items: center;
 }
 
+@media (max-width: 768px) {
+  .icon-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px 80px;
+  }
+}
+
 /* ICONS */
 
 .icon {
