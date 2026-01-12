@@ -50,7 +50,7 @@ for (let i = 0; i < BIN_COUNT; i++) {
     "image"
   );
 
-  img.setAttribute("href", "assets/bin.svg");
+  img.setAttribute("href", "/assets/bin.svg");
   img.setAttribute("width", BIN_SIZE);
   img.setAttribute("height", BIN_SIZE);
 
