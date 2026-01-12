@@ -1,0 +1,157 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: #c0c0c0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===================================================
+   PAGE — TRUE RESPONSIVE CENTERING
+=================================================== */
+
+.cta-page {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 30px; /* 🔑 keeps 30px gutter on small screens */
+}
+
+/* ===================================================
+   POPUP — RESPONSIVE BUT VISUALLY IDENTICAL
+=================================================== */
+
+.cta-popup {
+  position: relative;
+
+  width: 500px;
+  max-width: calc(100% - 60px); /* 🔑 prevents left-sticking */
+
+  margin: 0 auto;
+}
+
+/* SVG */
+
+.cta-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* CLOSE HIT AREA */
+
+.cta-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+
+  width: 28px;
+  height: 28px;
+
+  cursor: pointer;
+  z-index: 5;
+}
+
+/* ===================================================
+   BUTTON SYSTEM — SAME AS REST OF SITE
+=================================================== */
+
+.cta-btn-wrap {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 300px;
+  height: 40px;
+  z-index: 4;
+}
+
+/* OFFSET BACK PLATE */
+
+.cta-btn-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translate(2px, 2px);
+  background: #EDEDED;
+  border-radius: 6px;
+  z-index: 0;
+}
+
+/* BUTTON */
+
+.cta-button {
+  position: relative;
+  width: 300px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  color: #000000;
+  text-decoration: none;
+
+  border: 2px solid #003C74;
+  border-radius: 6px;
+
+  background: linear-gradient(
+    to bottom,
+    #2AFF00 0%,
+    #00C200 100%
+  );
+
+  z-index: 1;
+}
+
+/* HOVER — INSTANT */
+
+.cta-btn-wrap:hover .cta-button {
+  background: linear-gradient(
+    to bottom,
+    #22D900 0%,
+    #009E00 100%
+  );
+}
+
+.cta-btn-wrap:hover::before {
+  background: #A8A8E6;
+}
+
+/* ===================================================
+   CURSORS
+=================================================== */
+
+html {
+  cursor: url("../assets/cursors/cursor-default.png") 0 0, auto;
+}
+
+a,
+button,
+.btn,
+.icon,
+.cta-button,
+input,
+select {
+  cursor: url("../assets/cursors/cursor-pointer.png") 0 0, pointer;
+}

@@ -1,0 +1,220 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #0000c5;
+  color: #fafafa;
+}
+
+/* PAGE */
+
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 2146px;
+  padding: 44px 30px;
+  background: #0000c5;
+  overflow: hidden;
+}
+
+/* EVENT DETAILS */
+
+.event-detail {
+  position: absolute;
+  top: 44px;
+  right: 30px;
+  text-align: right;
+  font-size: 20px;
+  line-height: 1.4;
+  font-weight: 300;
+  z-index: 5;
+}
+
+.event-date {
+  display: flex;
+  flex-direction: column;
+}
+
+.event-meta {
+  margin-top: 13px;
+}
+
+/* TITLE */
+
+.hero-title {
+  position: absolute;
+  top: calc(44px + (13px * 1.4 * 3) - 4px);
+  left: 30px;
+  width: 637px;
+  height: 912px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font-weight: 400;
+  line-height: 228px;
+  z-index: 5;
+}
+
+.hero-title span {
+  font-size: 160px;
+  letter-spacing: -0.01em;
+}
+
+/* CTA */
+
+.hero-cta {
+  position: absolute;
+  bottom: 300px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 50px;
+  z-index: 6;
+}
+
+/* ===================================================
+   BUTTON SYSTEM — FINAL & CORRECT
+=================================================== */
+
+/* BUTTON WRAPPER */
+
+.btn-wrap {
+  position: relative;
+  width: 300px;
+  height: 40px;
+}
+
+/* BACK PLATE (TRUE BACK LAYER) */
+
+.btn-shadow {
+  position: absolute;
+  inset: 0;
+  transform: translate(2px, 2px);
+  background: #EDEDED;
+  border-radius: 6px;
+  z-index: 0;
+}
+
+/* BASE BUTTON */
+
+.btn {
+  position: relative;
+  width: 300px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+
+  border-radius: 6px;
+  border: 2px solid #003C74;
+  text-decoration: none;
+
+  z-index: 1;
+}
+
+/* ENTER EXHIBITION */
+
+.btn-outline {
+  background: linear-gradient(
+    to bottom,
+    #FFFCEA 0%,
+    #ECE9D8 100%
+  );
+  color: #000000;
+}
+
+/* ABOUT EXHIBITION */
+
+.btn-green {
+  background: linear-gradient(
+    to bottom,
+    #2AFF00 0%,
+    #00C200 100%
+  );
+  color: #000000;
+}
+
+/* HOVER — INSTANT */
+
+.btn-wrap:hover .btn-outline {
+  background: linear-gradient(
+    to bottom,
+    #EFE6C8 0%,
+    #DCD6BE 100%
+  );
+}
+
+.btn-wrap:hover .btn-green {
+  background: linear-gradient(
+    to bottom,
+    #22D900 0%,
+    #009E00 100%
+  );
+}
+
+.btn-wrap:hover .btn-shadow {
+  background: #A8A8E6;
+}
+
+/* WHITE SLAB */
+
+.white-slab {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 600px;
+  background: #FAFAFA;
+  z-index: 1;
+}
+
+/* BIN WAVE */
+
+.bin-wave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 400px;
+  height: 700px;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.bin-wave-svg {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5000px;
+  height: 700px;
+}
+
+html {
+  cursor: url("../assets/cursors/cursor-default.png") 0 0, auto;
+}
+
+a,
+button,
+.btn,
+.icon,
+.cta-button,
+input,
+select {
+  cursor: url("../assets/cursors/cursor-pointer.png") 0 0, pointer;
+}

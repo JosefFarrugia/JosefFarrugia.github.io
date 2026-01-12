@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get Your Ticket</title>
+
+  <link rel="stylesheet" href="css/ticket.css" />
+</head>
+
+<body>
+
+<main class="ticket-page">
+  <div class="ticket-inner">
+
+    <!-- HEADER -->
+    <header class="ticket-header">
+      <a href="index.html" class="site-title-link">
+        <h1 class="site-title">
+          we are<br>
+          both<br>
+          obsolete
+        </h1>
+      </a>
+    </header>
+
+    <!-- FORM -->
+    <section class="ticket-form">
+
+      <h2 class="form-title">Get your ticket</h2>
+
+      <form>
+
+        <div class="field">
+          <div class="input-wrapper">
+            <span class="input-label">First Name</span>
+            <input type="text" placeholder="Your First Name" />
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="input-wrapper">
+            <span class="input-label">Last Name</span>
+            <input type="text" placeholder="Your Last Name" />
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="input-wrapper">
+            <span class="input-label">Email</span>
+            <input type="email" placeholder="Your Email Address" />
+          </div>
+        </div>
+
+        <!-- PHONE -->
+        <div class="field phone-field">
+
+          <div class="country-select input-wrapper">
+            <span class="input-label">Phone</span>
+            <div class="phone-row">
+              <img src="assets/Flag-Malta.jpg" alt="Malta" class="flag-img" />
+              <span class="code">+356</span>
+              <span class="arrow"></span>
+            </div>
+          </div>
+
+          <div class="phone-input input-wrapper">
+            <span class="input-label">Phone Number</span>
+            <input type="tel" placeholder="79450814" />
+          </div>
+
+        </div>
+
+        <!-- ACCOUNT TYPE -->
+        <div class="field account-type">
+          <div class="input-wrapper">
+            <span class="input-label">Account Type</span>
+            <select required>
+              <option value="" disabled selected>Select</option>
+              <option>Student</option>
+              <option>General</option>
+              <option>VIP</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- PAYMENT -->
+        <div class="payment">
+
+          <div class="payment-row">
+            <div class="payment-box">
+              <img src="assets/visa-logo.svg" alt="Visa" />
+            </div>
+
+            <div class="payment-box">
+              <img src="assets/Mastercard.svg" alt="Mastercard" />
+            </div>
+          </div>
+
+          <div class="apple-pay">
+            <img src="assets/ApplePay.svg" alt="Apple Pay" />
+          </div>
+
+        </div>
+
+      </form>
+
+    </section>
+
+  </div>
+</main>
+
+</body>
+</html>

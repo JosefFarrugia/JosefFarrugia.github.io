@@ -1,11 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>we are both obsolete</title>
+
+  <link rel="stylesheet" href="css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
-   <h1>we are both obsolete</h1> 
+
+<main class="hero">
+
+  <div class="event-detail">
+    <div class="event-date">
+      <span>4 February → 3 March</span>
+      <span class="event-year">2026</span>
+    </div>
+    <div class="event-meta">
+      <div>Malta Society of Arts</div>
+      <div>Valletta</div>
+    </div>
+  </div>
+
+  <div class="hero-inner">
+    <h1 class="hero-title">
+      <span>we</span>
+      <span>are</span>
+      <span>both</span>
+      <span>obsolete</span>
+    </h1>
+  </div>
+
+  <!-- CTA -->
+  <div class="hero-cta">
+
+    <div class="btn-wrap">
+      <span class="btn-shadow"></span>
+      <a class="btn btn-outline" href="cta.html">
+        ENTER EXHIBITION
+      </a>
+    </div>
+
+    <div class="btn-wrap">
+      <span class="btn-shadow"></span>
+      <a class="btn btn-green" href="Exhibition_Overview.html">
+        ABOUT EXHIBITION
+      </a>
+    </div>
+
+  </div>
+
+  <!-- WHITE SLAB -->
+  <div class="white-slab"></div>
+
+  <!-- BIN WAVE SYSTEM -->
+  <div class="bin-wave">
+    <svg class="bin-wave-svg" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <mask id="wave-mask" maskUnits="userSpaceOnUse">
+          <rect id="mask-bg" fill="black" />
+          <path id="wave-path" fill="white" />
+        </mask>
+      </defs>
+
+      <rect id="white-region" fill="#FAFAFA" mask="url(#wave-mask)" />
+      <g class="bins"></g>
+    </svg>
+  </div>
+
+</main>
+
+<script src="wave.js"></script>
 </body>
 </html>

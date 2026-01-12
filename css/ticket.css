@@ -1,0 +1,194 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #FAFAFA;
+  color: #0000c5;
+}
+
+/* PAGE */
+
+.ticket-page {
+  width: 100%;
+  min-height: 1024px;
+  padding: 44px 30px;
+}
+
+.ticket-inner {
+  width: 100%;
+}
+
+/* HEADER */
+
+.site-title-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.site-title {
+  font-size: 25px;
+  line-height: 1.1;
+  font-weight: 400;
+}
+
+/* FORM */
+
+.ticket-form {
+  margin-top: 70px; /* 🔑 gutter from title */
+}
+
+.form-title {
+  font-size: 37px;
+  font-weight: 500;
+  margin: 0 0 30px 0;
+}
+
+/* FIELDS */
+
+.field {
+  margin-bottom: 22px;
+}
+
+.account-type {
+  margin-bottom: 50px; /* 🔑 space before payment */
+}
+
+.input-wrapper {
+  width: 100%;
+  height: 80px;
+
+  padding: 10px 16px 8px 16px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background: linear-gradient(
+    to bottom,
+    #FFFCEA 0%,
+    #ECE9D8 100%
+  );
+
+  border: 2px solid #003C74;
+  border-radius: 6px;
+}
+
+/* LABEL INSIDE */
+
+.input-label {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+/* INPUT / SELECT */
+
+input,
+select {
+  border: none;
+  outline: none;
+  background: transparent;
+
+  font-size: 26px;
+  font-weight: 400;
+
+  color: #c0c0c0;
+}
+
+/* Placeholder consistency */
+
+input::placeholder {
+  color: #c0c0c0;
+}
+
+select:valid {
+  color: #0000c5;
+}
+
+/* PHONE */
+
+.phone-field {
+  display: flex;
+  gap: 16px;
+}
+
+.phone-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.flag-img {
+  width: 24px;
+  height: 16px;
+  object-fit: cover;
+}
+
+.code {
+  font-size: 26px;
+  color: #c0c0c0;
+}
+
+.arrow {
+  margin-left: auto;
+  border: solid #003C74;
+  border-width: 0 2px 2px 0;
+  padding: 4px;
+  transform: rotate(45deg);
+}
+
+/* PAYMENT */
+
+.payment {
+  margin-top: 0;
+}
+
+.payment-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 12px;
+}
+
+.payment-box {
+  flex: 1;
+  height: 48px;
+  background: #CFCFCF;
+  border-radius: 6px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.apple-pay {
+  height: 48px;
+  background: #000;
+  border-radius: 6px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+html {
+  cursor: url("../assets/cursors/cursor-default.png") 0 0, auto;
+}
+
+a,
+button,
+.btn,
+.icon,
+.cta-button,
+input,
+select {
+  cursor: url("../assets/cursors/cursor-pointer.png") 0 0, pointer;
+}
