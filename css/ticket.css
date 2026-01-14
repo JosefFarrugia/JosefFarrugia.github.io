@@ -16,7 +16,9 @@ body {
   color: #0000c5;
 }
 
-/* PAGE */
+/* ===================================================
+   PAGE
+=================================================== */
 
 .ticket-page {
   width: 100%;
@@ -28,7 +30,9 @@ body {
   width: 100%;
 }
 
-/* HEADER */
+/* ===================================================
+   HEADER
+=================================================== */
 
 .site-title-link {
   text-decoration: none;
@@ -41,10 +45,12 @@ body {
   font-weight: 400;
 }
 
-/* FORM */
+/* ===================================================
+   FORM
+=================================================== */
 
 .ticket-form {
-  margin-top: 70px; /* 🔑 gutter from title */
+  margin-top: 70px;
 }
 
 .form-title {
@@ -53,14 +59,16 @@ body {
   margin: 0 0 30px 0;
 }
 
-/* FIELDS */
+/* ===================================================
+   FIELDS
+=================================================== */
 
 .field {
   margin-bottom: 22px;
 }
 
 .account-type {
-  margin-bottom: 50px; /* 🔑 space before payment */
+  margin-bottom: 50px;
 }
 
 .input-wrapper {
@@ -83,14 +91,18 @@ body {
   border-radius: 6px;
 }
 
-/* LABEL INSIDE */
+/* ===================================================
+   LABEL
+=================================================== */
 
 .input-label {
   font-size: 20px;
   font-weight: 500;
 }
 
-/* INPUT / SELECT */
+/* ===================================================
+   INPUT / SELECT
+=================================================== */
 
 input,
 select {
@@ -100,11 +112,8 @@ select {
 
   font-size: 26px;
   font-weight: 400;
-
   color: #c0c0c0;
 }
-
-/* Placeholder consistency */
 
 input::placeholder {
   color: #c0c0c0;
@@ -114,39 +123,64 @@ select:valid {
   color: #0000c5;
 }
 
-/* PHONE */
+/* ===================================================
+   PHONE FIELD — FINAL MOBILE-SAFE FIX
+=================================================== */
 
 .phone-field {
   display: flex;
   gap: 16px;
 }
 
+/* 🔑 CRITICAL — allows flex children to shrink */
+.phone-field > .input-wrapper {
+  min-width: 0;
+}
+
+/* Country selector — fixed width */
+.country-select {
+  flex: 0 0 140px;
+}
+
+/* Phone number — fluid, never bleeds */
+.phone-input {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Phone row contents */
 .phone-row {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
+/* Flag */
 .flag-img {
   width: 24px;
   height: 16px;
   object-fit: cover;
 }
 
+/* Country code */
 .code {
   font-size: 26px;
   color: #c0c0c0;
 }
 
+/* Arrow — never collapses */
 .arrow {
   margin-left: auto;
   border: solid #003C74;
   border-width: 0 2px 2px 0;
   padding: 4px;
   transform: rotate(45deg);
+  flex-shrink: 0;
 }
 
-/* PAYMENT */
+/* ===================================================
+   PAYMENT
+=================================================== */
 
 .payment {
   margin-top: 0;
@@ -178,6 +212,10 @@ select:valid {
   align-items: center;
   justify-content: center;
 }
+
+/* ===================================================
+   CURSORS
+=================================================== */
 
 html {
   cursor: url("../assets/cursors/cursor-default.png") 0 0, auto;
