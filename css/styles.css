@@ -22,7 +22,7 @@ body {
 .hero {
   position: relative;
   width: 100%;
-  min-height: 2146px; /* desktop canvas */
+  min-height: 2146px;
   padding: 44px 30px;
   background: #0000c5;
   overflow: hidden;
@@ -53,7 +53,7 @@ body {
 }
 
 /* ===================================================
-   TITLE — RESPONSIVE, SAFE
+   TITLE — RESPONSIVE & SAFE
 =================================================== */
 
 .hero-title {
@@ -80,7 +80,7 @@ body {
 }
 
 /* ===================================================
-   CTA — PAGE-RELATIVE (NOT FIXED)
+   CTA — PAGE-RELATIVE, STABLE
 =================================================== */
 
 .hero-cta {
@@ -195,7 +195,7 @@ body {
 }
 
 /* ===================================================
-   BIN WAVE
+   BIN WAVE — UNTOUCHED
 =================================================== */
 
 .bin-wave {
@@ -218,15 +218,10 @@ body {
 }
 
 /* ===================================================
-   MOBILE FIX — THIS REMOVES THE GAP (CRITICAL)
+   MOBILE FIXES (NO EXTRA SPACE)
 =================================================== */
 
 @media (max-width: 768px) {
-
-  /* 🔑 let content define height on mobile */
-  .hero {
-    min-height: auto;
-  }
 
   .hero-title {
     position: relative;
@@ -234,7 +229,7 @@ body {
     left: 0;
     width: 100%;
     height: auto;
-    margin-top: 120px;
+    margin-top: 0; /* 🔑 CRITICAL FIX */
   }
 
   .hero-cta {
