@@ -16,7 +16,7 @@ body {
 }
 
 /* ===================================================
-   PAGE — TRUE RESPONSIVE CENTERING
+   PAGE — TRUE CENTERING
 =================================================== */
 
 .cta-page {
@@ -27,20 +27,17 @@ body {
   align-items: center;
   justify-content: center;
 
-  padding: 0 30px; /* 🔑 keeps 30px gutter on small screens */
+  padding: 30px; /* safe gutter on small screens */
 }
 
 /* ===================================================
-   POPUP — RESPONSIVE BUT VISUALLY IDENTICAL
+   POPUP — DESKTOP BASE
 =================================================== */
 
 .cta-popup {
   position: relative;
-
   width: 500px;
-  max-width: calc(100% - 60px); /* 🔑 prevents left-sticking */
-
-  margin: 0 auto;
+  max-width: 100%;
 }
 
 /* SVG */
@@ -60,13 +57,12 @@ body {
 
   width: 28px;
   height: 28px;
-
-  cursor: pointer;
   z-index: 5;
+  cursor: pointer;
 }
 
 /* ===================================================
-   BUTTON SYSTEM — SAME AS REST OF SITE
+   BUTTON SYSTEM
 =================================================== */
 
 .cta-btn-wrap {
@@ -80,7 +76,7 @@ body {
   z-index: 4;
 }
 
-/* OFFSET BACK PLATE */
+/* OFFSET PLATE */
 
 .cta-btn-wrap::before {
   content: "";
@@ -103,13 +99,14 @@ body {
   align-items: center;
   justify-content: center;
 
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 18px;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 
-  color: #000000;
+  font-family: Arial, Helvetica, sans-serif;
+
+  color: #000;
   text-decoration: none;
 
   border: 2px solid #003C74;
@@ -124,7 +121,7 @@ body {
   z-index: 1;
 }
 
-/* HOVER — INSTANT */
+/* HOVER */
 
 .cta-btn-wrap:hover .cta-button {
   background: linear-gradient(
@@ -139,6 +136,23 @@ body {
 }
 
 /* ===================================================
+   MOBILE — SCALE, DON'T BREAK
+=================================================== */
+
+@media (max-width: 768px) {
+  .cta-popup {
+    transform: scale(0.85);
+    transform-origin: center;
+  }
+}
+
+@media (max-width: 420px) {
+  .cta-popup {
+    transform: scale(0.78);
+  }
+}
+
+/* ===================================================
    CURSORS
 =================================================== */
 
@@ -148,8 +162,6 @@ html {
 
 a,
 button,
-.btn,
-.icon,
 .cta-button,
 input,
 select {
