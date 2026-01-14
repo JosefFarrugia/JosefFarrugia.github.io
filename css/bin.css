@@ -17,10 +17,12 @@ body {
 
 /* PAGE — POSITIONING CONTEXT */
 .artwork-page {
-  position: relative;          /* 🔑 CRITICAL */
+  position: relative;
   width: 100%;
   min-height: 1024px;
-  padding: 44px 30px;
+
+  /* THIS reserves space so the button never overlaps */
+  padding: 44px 30px 120px;
 }
 
 /* TOP BAR */
@@ -72,21 +74,22 @@ body {
 }
 
 /* ===================================================
-   ABOUT EXHIBITION BUTTON — HOMEPAGE BEHAVIOUR
+   ABOUT EXHIBITION BUTTON — CORRECT BEHAVIOUR
 =================================================== */
 
 .btn-wrap {
-  position: absolute;          /* 🔑 NOT FIXED */
-  bottom: 44px;                /* 44px from bottom of PAGE */
+  position: absolute;
+  bottom: 44px;
   left: 50%;
   transform: translateX(-50%);
+  margin-left: auto;
+  margin-right: auto;
 
   width: 300px;
   height: 40px;
   z-index: 10;
 }
 
-/* SHADOW PLATE */
 .btn-shadow {
   position: absolute;
   inset: 0;
@@ -95,7 +98,6 @@ body {
   border-radius: 6px;
 }
 
-/* BASE BUTTON */
 .btn {
   position: relative;
   width: 300px;
@@ -123,7 +125,6 @@ body {
   text-decoration: none;
 }
 
-/* INSTANT HOVER */
 .btn-wrap:hover .btn {
   background: linear-gradient(
     to bottom,
@@ -134,18 +135,4 @@ body {
 
 .btn-wrap:hover .btn-shadow {
   background: #A8A8E6;
-}
-
-html {
-  cursor: url("../assets/cursors/cursor-default.png") 0 0, auto;
-}
-
-a,
-button,
-.btn,
-.icon,
-.cta-button,
-input,
-select {
-  cursor: url("../assets/cursors/cursor-pointer.png") 0 0, pointer;
 }
