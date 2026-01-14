@@ -22,7 +22,7 @@ body {
 .hero {
   position: relative;
   width: 100%;
-  min-height: 2146px;
+  min-height: 2146px; /* desktop canvas */
   padding: 44px 30px;
   background: #0000c5;
   overflow: hidden;
@@ -53,7 +53,7 @@ body {
 }
 
 /* ===================================================
-   TITLE — RESPONSIVE (DESKTOP → PHONE SAFE)
+   TITLE — RESPONSIVE, SAFE
 =================================================== */
 
 .hero-title {
@@ -80,12 +80,12 @@ body {
 }
 
 /* ===================================================
-   CTA — FIXED BEHAVIOUR
+   CTA — PAGE-RELATIVE (NOT FIXED)
 =================================================== */
 
 .hero-cta {
   position: absolute;
-  bottom: 300px;              /* 🔑 anchored to PAGE bottom */
+  bottom: 300px;
   left: 50%;
   transform: translateX(-50%);
 
@@ -158,7 +158,7 @@ body {
   color: #000000;
 }
 
-/* HOVER — INSTANT */
+/* HOVER */
 
 .btn-wrap:hover .btn-outline {
   background: linear-gradient(
@@ -218,10 +218,15 @@ body {
 }
 
 /* ===================================================
-   MOBILE FIXES
+   MOBILE FIX — THIS REMOVES THE GAP (CRITICAL)
 =================================================== */
 
 @media (max-width: 768px) {
+
+  /* 🔑 let content define height on mobile */
+  .hero {
+    min-height: auto;
+  }
 
   .hero-title {
     position: relative;
