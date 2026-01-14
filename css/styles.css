@@ -15,7 +15,9 @@ body {
   color: #fafafa;
 }
 
-/* PAGE */
+/* ===================================================
+   PAGE
+=================================================== */
 
 .hero {
   position: relative;
@@ -26,7 +28,9 @@ body {
   overflow: hidden;
 }
 
-/* EVENT DETAILS */
+/* ===================================================
+   EVENT DETAILS
+=================================================== */
 
 .event-detail {
   position: absolute;
@@ -48,7 +52,9 @@ body {
   margin-top: 13px;
 }
 
-/* TITLE */
+/* ===================================================
+   TITLE — RESPONSIVE (DESKTOP → PHONE SAFE)
+=================================================== */
 
 .hero-title {
   position: absolute;
@@ -57,43 +63,49 @@ body {
   width: 637px;
   height: 912px;
   margin: 0;
+
   display: flex;
   flex-direction: column;
+
+  font-family: 'Inter Display', 'Inter', system-ui, sans-serif;
   font-weight: 400;
-  line-height: 228px;
+
+  line-height: clamp(72px, 14vw, 228px);
   z-index: 5;
 }
 
 .hero-title span {
-  font-size: 160px;
+  font-size: clamp(56px, 12vw, 160px);
   letter-spacing: -0.01em;
 }
 
-/* CTA */
+/* ===================================================
+   CTA — FIXED BEHAVIOUR
+=================================================== */
 
 .hero-cta {
-  position: relative;
+  position: absolute;
+  bottom: 300px;              /* 🔑 anchored to PAGE bottom */
+  left: 50%;
+  transform: translateX(-50%);
+
   display: flex;
   gap: 50px;
   z-index: 6;
-  top: 1750px;
+
   flex-wrap: wrap;
   justify-content: center;
 }
 
 /* ===================================================
-   BUTTON SYSTEM — FINAL & CORRECT
+   BUTTON SYSTEM
 =================================================== */
-
-/* BUTTON WRAPPER */
 
 .btn-wrap {
   position: relative;
   width: 300px;
   height: 40px;
 }
-
-/* BACK PLATE (TRUE BACK LAYER) */
 
 .btn-shadow {
   position: absolute;
@@ -103,8 +115,6 @@ body {
   border-radius: 6px;
   z-index: 0;
 }
-
-/* BASE BUTTON */
 
 .btn {
   position: relative;
@@ -118,8 +128,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 18px;
   font-weight: 600;
-  text-transform: uppercase;
   letter-spacing: 0.06em;
+  text-transform: uppercase;
 
   border-radius: 6px;
   border: 2px solid #003C74;
@@ -128,8 +138,7 @@ body {
   z-index: 1;
 }
 
-
-/* ENTER EXHIBITION */
+/* BUTTON VARIANTS */
 
 .btn-outline {
   background: linear-gradient(
@@ -139,8 +148,6 @@ body {
   );
   color: #000000;
 }
-
-/* ABOUT EXHIBITION */
 
 .btn-green {
   background: linear-gradient(
@@ -173,7 +180,9 @@ body {
   background: #A8A8E6;
 }
 
-/* WHITE SLAB */
+/* ===================================================
+   WHITE SLAB
+=================================================== */
 
 .white-slab {
   position: absolute;
@@ -185,7 +194,9 @@ body {
   z-index: 1;
 }
 
-/* BIN WAVE */
+/* ===================================================
+   BIN WAVE
+=================================================== */
 
 .bin-wave {
   position: absolute;
@@ -206,6 +217,31 @@ body {
   height: 700px;
 }
 
+/* ===================================================
+   MOBILE FIXES
+=================================================== */
+
+@media (max-width: 768px) {
+
+  .hero-title {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    margin-top: 120px;
+  }
+
+  .hero-cta {
+    bottom: 120px;
+    gap: 24px;
+  }
+}
+
+/* ===================================================
+   CURSORS
+=================================================== */
+
 html {
   cursor: url("../assets/cursors/cursor-default.png") 0 0, auto;
 }
@@ -214,7 +250,6 @@ a,
 button,
 .btn,
 .icon,
-.cta-button,
 input,
 select {
   cursor: url("../assets/cursors/cursor-pointer.png") 0 0, pointer;
