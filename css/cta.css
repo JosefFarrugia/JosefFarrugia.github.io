@@ -16,7 +16,7 @@ body {
 }
 
 /* ===================================================
-   PAGE — TRUE CENTERING
+   PAGE — CENTERED
 =================================================== */
 
 .cta-page {
@@ -27,16 +27,20 @@ body {
   align-items: center;
   justify-content: center;
 
-  padding: 30px; /* safe gutter on small screens */
+  padding: 30px;
 }
 
 /* ===================================================
-   POPUP — DESKTOP BASE
+   POPUP — BASE
 =================================================== */
+
+:root {
+  --cta-scale: 1;
+}
 
 .cta-popup {
   position: relative;
-  width: 500px;
+  width: calc(500px * var(--cta-scale));
   max-width: 100%;
 }
 
@@ -52,27 +56,29 @@ body {
 
 .cta-close {
   position: absolute;
-  top: 12px;
-  right: 12px;
+  top: calc(12px * var(--cta-scale));
+  right: calc(12px * var(--cta-scale));
 
-  width: 28px;
-  height: 28px;
+  width: calc(28px * var(--cta-scale));
+  height: calc(28px * var(--cta-scale));
+
   z-index: 5;
   cursor: pointer;
 }
 
 /* ===================================================
-   BUTTON SYSTEM
+   BUTTON SYSTEM — SCALES WITH POPUP
 =================================================== */
 
 .cta-btn-wrap {
   position: absolute;
-  bottom: 18px;
+  bottom: calc(18px * var(--cta-scale));
   left: 50%;
   transform: translateX(-50%);
 
-  width: 300px;
-  height: 40px;
+  width: calc(300px * var(--cta-scale));
+  height: calc(40px * var(--cta-scale));
+
   z-index: 4;
 }
 
@@ -82,7 +88,10 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  transform: translate(2px, 2px);
+  transform: translate(
+    calc(2px * var(--cta-scale)),
+    calc(2px * var(--cta-scale))
+  );
   background: #EDEDED;
   border-radius: 6px;
   z-index: 0;
@@ -92,14 +101,14 @@ body {
 
 .cta-button {
   position: relative;
-  width: 300px;
-  height: 40px;
+  width: 100%;
+  height: 100%;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  font-size: 18px;
+  font-size: calc(18px * var(--cta-scale));
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -136,19 +145,18 @@ body {
 }
 
 /* ===================================================
-   MOBILE — SCALE, DON'T BREAK
+   RESPONSIVE SCALE — CLEAN & PREDICTABLE
 =================================================== */
 
 @media (max-width: 768px) {
-  .cta-popup {
-    transform: scale(0.85);
-    transform-origin: center;
+  :root {
+    --cta-scale: 0.85;
   }
 }
 
 @media (max-width: 420px) {
-  .cta-popup {
-    transform: scale(0.78);
+  :root {
+    --cta-scale: 0.75;
   }
 }
 
