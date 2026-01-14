@@ -12,7 +12,7 @@ const START_OFFSET = -3000;
 
 /* WAVE CHARACTER */
 const WAVE_HEIGHT = 190;
-const SPEED = 0.06;
+const SPEED = 0.008;
 const BASELINE = 300;
 
 /* OPTICAL ALIGNMENT */
