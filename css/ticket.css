@@ -112,7 +112,9 @@ select {
 
   font-size: 26px;
   font-weight: 400;
+
   color: #c0c0c0;
+  width: 100%;            /* 🔑 CRITICAL */
 }
 
 input::placeholder {
@@ -124,7 +126,7 @@ select:valid {
 }
 
 /* ===================================================
-   PHONE FIELD — FINAL MOBILE-SAFE FIX
+   PHONE FIELD — ACTUALLY FIXED
 =================================================== */
 
 .phone-field {
@@ -132,23 +134,22 @@ select:valid {
   gap: 16px;
 }
 
-/* 🔑 CRITICAL — allows flex children to shrink */
-.phone-field > .input-wrapper {
+/* 🔑 allows flex children to shrink */
+.phone-field > * {
   min-width: 0;
 }
 
-/* Country selector — fixed width */
+/* Country selector */
 .country-select {
   flex: 0 0 140px;
 }
 
-/* Phone number — fluid, never bleeds */
+/* Phone number */
 .phone-input {
   flex: 1;
-  min-width: 0;
 }
 
-/* Phone row contents */
+/* Row content */
 .phone-row {
   display: flex;
   align-items: center;
@@ -168,7 +169,7 @@ select:valid {
   color: #c0c0c0;
 }
 
-/* Arrow — never collapses */
+/* Arrow — protected from collapse */
 .arrow {
   margin-left: auto;
   border: solid #003C74;
@@ -181,10 +182,6 @@ select:valid {
 /* ===================================================
    PAYMENT
 =================================================== */
-
-.payment {
-  margin-top: 0;
-}
 
 .payment-row {
   display: flex;
