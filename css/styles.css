@@ -53,10 +53,10 @@ body {
 }
 
 /* ===================================================
-   TITLE — SVG SYSTEM (CORRECT)
+   TITLE — SVG SYSTEM
 =================================================== */
 
-/* Reserves vertical space so bins never overlap */
+/* Desktop reserved space */
 .hero-title-space {
   height: calc(
     89px + 135px +
@@ -66,7 +66,6 @@ body {
   );
 }
 
-/* Padding-aware container */
 .hero-title-container {
   position: absolute;
   top: calc(44px + (13px * 1.4 * 3));
@@ -76,7 +75,6 @@ body {
   z-index: 5;
 }
 
-/* SVG stack */
 .hero-title-svg {
   display: flex;
   flex-direction: column;
@@ -85,7 +83,6 @@ body {
   max-width: 100%;
 }
 
-/* SVG sizing */
 .word {
   display: block;
   width: auto;
@@ -163,18 +160,6 @@ body {
   color: #000;
 }
 
-.btn-wrap:hover .btn-outline {
-  background: linear-gradient(to bottom, #EFE6C8 0%, #DCD6BE 100%);
-}
-
-.btn-wrap:hover .btn-green {
-  background: linear-gradient(to bottom, #22D900 0%, #009E00 100%);
-}
-
-.btn-wrap:hover .btn-shadow {
-  background: #A8A8E6;
-}
-
 /* ===================================================
    WHITE SLAB
 =================================================== */
@@ -213,26 +198,22 @@ body {
 }
 
 /* ===================================================
-   MOBILE
+   MOBILE — FIXED GUTTER (147px)
 =================================================== */
 
 @media (max-width: 768px) {
 
-  .hero-title-container {
-    padding: 0 30px;
-  }
-
   .hero-title-svg {
     width: 671px;
     max-width: 100%;
-    gap: 146px;
+    gap: 147px; /* ✅ exact mobile gutter */
   }
 
   .hero-title-space {
     height: calc(
-      89px + 146px +
-      89px + 146px +
-      124px + 146px +
+      89px + 147px +
+      89px + 147px +
+      124px + 147px +
       124px
     );
   }
