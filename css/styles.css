@@ -211,9 +211,9 @@ body {
 
   .hero-title-space {
     height: calc(
-      89px + 50px +
-      89px + 50px +
-      124px + 50px +
+      89px + 10px +
+      89px + 10px +
+      124px + 10px +
       124px
     );
   }
