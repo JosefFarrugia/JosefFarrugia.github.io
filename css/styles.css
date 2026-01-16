@@ -24,7 +24,6 @@ body {
   width: 100%;
   min-height: 2146px;
   padding: 44px 30px;
-  background: #0000c5;
   overflow: hidden;
 }
 
@@ -43,56 +42,62 @@ body {
   z-index: 5;
 }
 
-.event-date {
-  display: flex;
-  flex-direction: column;
-}
+/* ===================================================
+   TITLE — STRUCTURAL SPACE (THIS FIXES OVERLAP)
+=================================================== */
 
-.event-meta {
-  margin-top: 13px;
+.hero-title-space {
+  height: calc(
+    89px + 135px +
+    89px + 135px +
+    124px + 135px +
+    124px
+  );
 }
 
 /* ===================================================
-   TITLE — RESPONSIVE (DESKTOP → PHONE SAFE)
+   TITLE — SVG STACK
 =================================================== */
 
-.hero-title {
+.hero-title-svg {
   position: absolute;
-  top: calc(44px + (13px * 1.4 * 3) - 4px);
+  top: calc(44px + (13px * 1.4 * 3));
   left: 30px;
-  width: 637px;
-  height: 912px;
-  margin: 0;
 
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  gap: 135px;
 
-  font-family: 'Inter Display', 'Inter', system-ui, sans-serif;
-  font-weight: 400;
-
-  line-height: clamp(72px, 14vw, 228px);
   z-index: 5;
 }
 
-.hero-title span {
-  font-size: clamp(56px, 12vw, 160px);
-  letter-spacing: -0.01em;
+.word {
+  width: auto;
+  display: block;
+}
+
+.word.small {
+  height: 89px;
+}
+
+.word.large {
+  height: 124px;
 }
 
 /* ===================================================
-   CTA — FIXED BEHAVIOUR
+   CTA
 =================================================== */
 
 .hero-cta {
   position: absolute;
-  bottom: 300px;              /* 🔑 anchored to PAGE bottom */
+  bottom: 300px;
   left: 50%;
   transform: translateX(-50%);
 
   display: flex;
   gap: 50px;
   z-index: 6;
-
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -113,7 +118,6 @@ body {
   transform: translate(2px, 2px);
   background: #EDEDED;
   border-radius: 6px;
-  z-index: 0;
 }
 
 .btn {
@@ -135,45 +139,16 @@ body {
   border: 2px solid #003C74;
   text-decoration: none;
 
-  z-index: 1;
+  background: #fff;
+  color: #000;
 }
 
-/* BUTTON VARIANTS */
-
 .btn-outline {
-  background: linear-gradient(
-    to bottom,
-    #FFFCEA 0%,
-    #ECE9D8 100%
-  );
-  color: #000000;
+  background: linear-gradient(#FFFCEA, #ECE9D8);
 }
 
 .btn-green {
-  background: linear-gradient(
-    to bottom,
-    #2AFF00 0%,
-    #00C200 100%
-  );
-  color: #000000;
-}
-
-/* HOVER — INSTANT */
-
-.btn-wrap:hover .btn-outline {
-  background: linear-gradient(
-    to bottom,
-    #EFE6C8 0%,
-    #DCD6BE 100%
-  );
-}
-
-.btn-wrap:hover .btn-green {
-  background: linear-gradient(
-    to bottom,
-    #22D900 0%,
-    #009E00 100%
-  );
+  background: linear-gradient(#2AFF00, #00C200);
 }
 
 .btn-wrap:hover .btn-shadow {
@@ -213,23 +188,27 @@ body {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  width: 5000px;
+  width: 10000px;
   height: 700px;
 }
 
 /* ===================================================
-   MOBILE FIXES
+   MOBILE ADJUSTMENTS (SPACING ONLY)
 =================================================== */
 
 @media (max-width: 768px) {
 
-  .hero-title {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    margin-top: 120px;
+  .hero-title-space {
+    height: calc(
+      89px + 146px +
+      89px + 146px +
+      124px + 146px +
+      124px
+    );
+  }
+
+  .hero-title-svg {
+    gap: 146px;
   }
 
   .hero-cta {
@@ -248,9 +227,6 @@ html {
 
 a,
 button,
-.btn,
-.icon,
-input,
-select {
+.btn {
   cursor: url("../assets/cursors/cursor-pointer.png") 0 0, pointer;
 }
