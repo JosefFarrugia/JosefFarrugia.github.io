@@ -24,6 +24,7 @@ body {
   width: 100%;
   min-height: 2146px;
   padding: 44px 30px;
+  background: #0000c5;
   overflow: hidden;
 }
 
@@ -42,10 +43,20 @@ body {
   z-index: 5;
 }
 
+.event-date {
+  display: flex;
+  flex-direction: column;
+}
+
+.event-meta {
+  margin-top: 13px;
+}
+
 /* ===================================================
-   TITLE — STRUCTURAL SPACE (THIS FIXES OVERLAP)
+   TITLE — SVG SYSTEM (DESKTOP)
 =================================================== */
 
+/* Reserves vertical space so nothing overlaps */
 .hero-title-space {
   height: calc(
     89px + 135px +
@@ -54,10 +65,6 @@ body {
     124px
   );
 }
-
-/* ===================================================
-   TITLE — SVG STACK
-=================================================== */
 
 .hero-title-svg {
   position: absolute;
@@ -72,9 +79,12 @@ body {
   z-index: 5;
 }
 
+/* SVG sizing */
+
 .word {
-  width: auto;
   display: block;
+  width: auto;
+  max-width: 100%;
 }
 
 .word.small {
@@ -138,8 +148,6 @@ body {
   border-radius: 6px;
   border: 2px solid #003C74;
   text-decoration: none;
-
-  background: #fff;
   color: #000;
 }
 
@@ -151,12 +159,20 @@ body {
   background: linear-gradient(#2AFF00, #00C200);
 }
 
+.btn-wrap:hover .btn-outline {
+  background: linear-gradient(#EFE6C8, #DCD6BE);
+}
+
+.btn-wrap:hover .btn-green {
+  background: linear-gradient(#22D900, #009E00);
+}
+
 .btn-wrap:hover .btn-shadow {
   background: #A8A8E6;
 }
 
 /* ===================================================
-   WHITE SLAB
+   WHITE SLAB + BIN WAVE
 =================================================== */
 
 .white-slab {
@@ -169,17 +185,12 @@ body {
   z-index: 1;
 }
 
-/* ===================================================
-   BIN WAVE
-=================================================== */
-
 .bin-wave {
   position: absolute;
   left: 0;
   right: 0;
   bottom: 400px;
   height: 700px;
-  overflow: hidden;
   pointer-events: none;
   z-index: 2;
 }
@@ -193,10 +204,19 @@ body {
 }
 
 /* ===================================================
-   MOBILE ADJUSTMENTS (SPACING ONLY)
+   MOBILE FIX — EXACT SPECS
 =================================================== */
 
 @media (max-width: 768px) {
+
+  .hero-title-svg {
+    top: 160px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 671px;
+    max-width: calc(100vw - 60px);
+    gap: 146px;
+  }
 
   .hero-title-space {
     height: calc(
@@ -205,10 +225,6 @@ body {
       124px + 146px +
       124px
     );
-  }
-
-  .hero-title-svg {
-    gap: 146px;
   }
 
   .hero-cta {
@@ -227,6 +243,9 @@ html {
 
 a,
 button,
-.btn {
+.btn,
+.icon,
+input,
+select {
   cursor: url("../assets/cursors/cursor-pointer.png") 0 0, pointer;
 }
