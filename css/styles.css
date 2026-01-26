@@ -258,3 +258,27 @@ input,
 select {
   cursor: url("../assets/cursors/cursor-pointer.png") 0 0, pointer;
 }
+
+/* ===================================================
+   BUTTON HOVER — MATCHES OTHER PAGES EXACTLY
+=================================================== */
+
+.btn-wrap:hover .btn-outline {
+  background: linear-gradient(
+    to bottom,
+    #EFE6C8 0%,
+    #DCD6BE 100%
+  );
+}
+
+.btn-wrap:hover .btn-green {
+  background: linear-gradient(
+    to bottom,
+    #22D900 0%,
+    #009E00 100%
+  );
+}
+
+.btn-wrap:hover .btn-shadow {
+  background: #A8A8E6;
+}
